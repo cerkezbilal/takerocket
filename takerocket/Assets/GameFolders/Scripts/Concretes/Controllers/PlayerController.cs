@@ -9,17 +9,27 @@ namespace takerocket.Controllers//Klasörleme mantığı oyunun_adi.bulunduğu k
     public class PlayerController : MonoBehaviour
     {
 
-        
+        [SerializeField] float _turnSpeed = 10f;
+        [SerializeField] float _force = 55f;
         DefaultInput _input;
         bool _isForceUp;
         Mover _mover;
-        
+
+        float _leftRight;
+        Rotator _rotator;
+
+        public float TurnSpeed => _turnSpeed;
+        public float Force => _force;
+
+
+
 
         private void Awake()
         {
            
             _input = new DefaultInput();
-            _mover = new Mover(GetComponent<Rigidbody>());
+            _mover = new Mover(this);
+            _rotator = new Rotator(this);
         }
 
         //Input işlemleri
@@ -34,6 +44,8 @@ namespace takerocket.Controllers//Klasörleme mantığı oyunun_adi.bulunduğu k
             {
                 _isForceUp = false;
             }
+
+            _leftRight = _input.LeftRight;
         }
 
         //Fizik işlemleri
@@ -43,6 +55,9 @@ namespace takerocket.Controllers//Klasörleme mantığı oyunun_adi.bulunduğu k
             {
                 _mover.FixedTick();
             }
+
+            _rotator.FixedTick(_leftRight);
+
         }
 
 

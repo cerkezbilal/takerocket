@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using takerocket.Controllers;
 using UnityEngine;
 
 namespace takerocket.Movements
@@ -7,16 +8,18 @@ namespace takerocket.Movements
     public class Mover
     {
         Rigidbody _rigidbody;
+        PlayerController _playerController;
 
-        public Mover(Rigidbody rigidbody)
+        public Mover(PlayerController playerController)
         {
-            _rigidbody = rigidbody;
+            _playerController = playerController;
+            _rigidbody = playerController.GetComponent<Rigidbody>();
         }
 
         public void FixedTick()//Fixed Update fonskiyounu gibi benzesin diye fiziksel işlemler
         {
             //bu x y z ye göre değilde bizim direk pozisyonumuza göre kuvvet veren bir fonksiyon - //daha sonra dışardan alıcaz bu gücü
-            _rigidbody.AddRelativeForce(Vector3.up * Time.deltaTime * 55f);
+            _rigidbody.AddRelativeForce(Vector3.up * Time.deltaTime * _playerController.Force);
         }
     }
 }

@@ -221,7 +221,7 @@ Light:
   m_BounceIntensity: 3.71
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 4.5e-44, y: 7.24e-42, z: 6e-44, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 5.8010835e+15}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -1261,13 +1261,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 995004182601089802, guid: c05d6ca2a6f814a2c87bd434eeff8980, type: 3}
-      propertyPath: m_Mass
-      value: 0.05
+    - target: {fileID: 788054407, guid: c05d6ca2a6f814a2c87bd434eeff8980, type: 3}
+      propertyPath: _force
+      value: 35
       objectReference: {fileID: 0}
-    - target: {fileID: 995004182601089802, guid: c05d6ca2a6f814a2c87bd434eeff8980, type: 3}
-      propertyPath: m_Constraints
-      value: 56
+    - target: {fileID: 788054407, guid: c05d6ca2a6f814a2c87bd434eeff8980, type: 3}
+      propertyPath: _turnSpeed
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8906729658952265396, guid: c05d6ca2a6f814a2c87bd434eeff8980, type: 3}
       propertyPath: m_RootOrder
