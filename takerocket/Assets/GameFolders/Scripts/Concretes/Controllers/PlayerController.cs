@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using takerocket.Inputs;
+using takerocket.Movements;
 using UnityEngine;
 
 namespace takerocket.Controllers//Klasörleme mantığı oyunun_adi.bulunduğu klasör adı
@@ -8,22 +9,23 @@ namespace takerocket.Controllers//Klasörleme mantığı oyunun_adi.bulunduğu k
     public class PlayerController : MonoBehaviour
     {
 
-        Rigidbody _rigidbody;
+        
         DefaultInput _input;
         bool _isForceUp;
-        [SerializeField] float force;
+        Mover _mover;
         
 
         private void Awake()
         {
-            _rigidbody = GetComponent<Rigidbody>();
+           
             _input = new DefaultInput();
+            _mover = new Mover(GetComponent<Rigidbody>());
         }
 
         //Input işlemleri
         private void Update()
         {
-            Debug.Log(_input.IsForceUp);
+            
             if (_input.IsForceUp)
             {
                 _isForceUp = true;
@@ -39,7 +41,7 @@ namespace takerocket.Controllers//Klasörleme mantığı oyunun_adi.bulunduğu k
         {
             if (_isForceUp)
             {
-                _rigidbody.AddForce(Vector3.up * force * Time.deltaTime );
+                _mover.FixedTick();
             }
         }
 
