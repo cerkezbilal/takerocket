@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using takerocket.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -30,7 +31,7 @@ namespace takerocket.Controllers
             else
             {
                 //GameOver işlemi
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                GameManager.Instance.GameOver();
             }
             
         }
