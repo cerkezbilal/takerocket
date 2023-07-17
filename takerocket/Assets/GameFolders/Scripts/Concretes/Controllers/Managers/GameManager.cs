@@ -63,6 +63,16 @@ namespace takerocket.Managers
             yield return SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex+levelIndex);
         }
 
+        public void LoadMenuScene()
+        {
+            StartCoroutine(LoadMenuSceneAsync());
+        }
+
+        private IEnumerator LoadMenuSceneAsync()
+        {
+            yield return SceneManager.LoadSceneAsync("Menu");
+        }
+
         public void Exit()
         {
             Debug.Log("Çıkış yapıldı");
