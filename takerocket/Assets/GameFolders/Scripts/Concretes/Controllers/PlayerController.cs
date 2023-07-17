@@ -14,6 +14,7 @@ namespace takerocket.Controllers//Klasörleme mantığı oyunun_adi.bulunduğu k
         DefaultInput _input;
         bool _isForceUp;
         Mover _mover;
+        Fuel _fuel;
 
         float _leftRight;
         Rotator _rotator;
@@ -30,19 +31,21 @@ namespace takerocket.Controllers//Klasörleme mantığı oyunun_adi.bulunduğu k
             _input = new DefaultInput();
             _mover = new Mover(this);
             _rotator = new Rotator(this);
+            _fuel = GetComponent<Fuel>();
         }
 
         //Input işlemleri
         private void Update()
         {
             
-            if (_input.IsForceUp)
+            if (_input.IsForceUp && !_fuel.IsEmpty)//yani benzini varsa
             {
                 _isForceUp = true;
             }
             else
             {
                 _isForceUp = false;
+                _fuel.FuelIncrease(0.01f);//Burası w ya basmadığım yer o yüzden artış burada olacak
             }
 
             _leftRight = _input.LeftRight;
@@ -54,6 +57,7 @@ namespace takerocket.Controllers//Klasörleme mantığı oyunun_adi.bulunduğu k
             if (_isForceUp)
             {
                 _mover.FixedTick();
+                _fuel.FuelDecrease(0.2f);
             }
 
             _rotator.FixedTick(_leftRight);
