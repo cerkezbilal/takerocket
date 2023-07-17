@@ -424,7 +424,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1290
+  m_Name: pb_Mesh-27846
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -849,21 +849,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2096070648620713662, guid: 44d099771db78405b85f10ea8f82dcfe, type: 3}
-      propertyPath: m_BoundingSphereOverride.w
-      value: 4.3172368e+18
+    - target: {fileID: 5275789241921079358, guid: 44d099771db78405b85f10ea8f82dcfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2096070648620713662, guid: 44d099771db78405b85f10ea8f82dcfe, type: 3}
-      propertyPath: m_BoundingSphereOverride.x
-      value: 4.5764e-41
-      objectReference: {fileID: 0}
-    - target: {fileID: 2096070648620713662, guid: 44d099771db78405b85f10ea8f82dcfe, type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: 1.4035e-41
-      objectReference: {fileID: 0}
-    - target: {fileID: 2096070648620713662, guid: 44d099771db78405b85f10ea8f82dcfe, type: 3}
-      propertyPath: m_BoundingSphereOverride.z
-      value: 9.1834e-41
+    - target: {fileID: 5561502865585578780, guid: 44d099771db78405b85f10ea8f82dcfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44d099771db78405b85f10ea8f82dcfe, type: 3}
