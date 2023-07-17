@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace takerocket.Managers
 {
@@ -11,6 +12,8 @@ namespace takerocket.Managers
 
         //GameOver Eventi 
         public event System.Action OnGameOver;
+
+        public event System.Action OnMissionSucced;
 
         //Bu sınıfa ulaşmak isteyenler burdan çağıracak ve static olacak değişmez olacak(tekil)
         public static GameManager Instance { get; private set; }
@@ -44,7 +47,29 @@ namespace takerocket.Managers
            
         }
 
-        //eventler bu şekilde çalışır. Şimdi bu fonksiyonu nerde tetikleyecepiz. FinisFloorController a gidip GameOver olduğu yerde bu eventi tetikleyeceğiz
+        public void MissionSucced()
+        {
+            OnMissionSucced?.Invoke();//Görüyorsunuz mantık değişmiyor Action oluştur fonksiyonu yaz event i uyandır.
+        }
+
+        public void LoadLevelScene(int levelIndex = 0)
+        {
+            StartCoroutine(LoadLevelSceneAsync(levelIndex));
+        }
+
+        private IEnumerator LoadLevelSceneAsync(int levelIndex)
+        {
+            //Aktif sahne neyse bi üstüne geç ya da ordan gelen level index neyse ona geç de denebilir.
+            yield return SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex+levelIndex);
+        }
+
+        public void Exit()
+        {
+            Debug.Log("Çıkış yapıldı");
+            Application.Quit();
+        }
+
+        
        
 
 

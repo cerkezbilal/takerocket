@@ -30,6 +30,8 @@ namespace takerocket.Controllers//Klasörleme mantığı oyunun_adi.bulunduğu k
         {
             //Eventlerin çağırılma şeklidir bu script oluşturulduğunda çağır anlamında 
             GameManager.Instance.OnGameOver += HandleOnEventTrigger;
+
+            GameManager.Instance.OnMissionSucced += HandleOnEventTrigger;
         }
 
         
@@ -38,6 +40,7 @@ namespace takerocket.Controllers//Klasörleme mantığı oyunun_adi.bulunduğu k
         {
             //Bu script bitince event i sonlandır şişme yapmaması için
             GameManager.Instance.OnGameOver -= HandleOnEventTrigger;
+            GameManager.Instance.OnMissionSucced -= HandleOnEventTrigger;
         }
 
 

@@ -27,6 +27,7 @@ namespace takerocket.Controllers
                 //Efektleri göster demek
                 _finishFireWorks.gameObject.SetActive(true);
                 _finisLight.gameObject.SetActive(true);
+                GameManager.Instance.MissionSucced();
             }
             else
             {
