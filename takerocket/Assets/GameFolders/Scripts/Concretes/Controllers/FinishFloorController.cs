@@ -19,7 +19,7 @@ namespace takerocket.Controllers
         {
             PlayerController player = collision.collider.GetComponent<PlayerController>();
 
-            if (player == null) return;
+            if (player == null || !player.canMove) return;
 
             //İlk değdiği demek oluyor tepeden ya da ya da aşağıda değebilir. tepeden aşağıya demek bu 
             if (collision.GetContact(0).normal.y == -1)

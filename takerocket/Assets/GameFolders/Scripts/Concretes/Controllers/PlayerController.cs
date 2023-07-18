@@ -24,7 +24,7 @@ namespace takerocket.Controllers//Klasörleme mantığı oyunun_adi.bulunduğu k
 
         public float TurnSpeed => _turnSpeed;
         public float Force => _force;
-
+        public bool canMove => _canMove;
 
         private void OnEnable()
         {

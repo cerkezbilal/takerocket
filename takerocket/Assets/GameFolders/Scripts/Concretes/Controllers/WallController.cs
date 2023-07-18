@@ -15,7 +15,7 @@ namespace takerocket.Controllers
             PlayerController player = collision.collider.GetComponent<PlayerController>();
 
             //null değilse
-            if (player != null)
+            if (player != null && player.canMove)
             {
                 GameManager.Instance.GameOver();
             }
