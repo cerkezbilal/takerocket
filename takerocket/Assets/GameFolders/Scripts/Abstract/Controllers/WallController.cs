@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using takerocket.Controllers;
 using takerocket.Managers;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-namespace takerocket.Controllers
+
+namespace takerocket.Abstract.Controllers
 {
-    public class WallController : MonoBehaviour
+    public abstract class WallController : MonoBehaviour
     {
         //Çarpma işlemi
         private void OnCollisionEnter(Collision collision)
