@@ -13,6 +13,9 @@ namespace takerocket.Movements
 
         public bool IsEmpty => _currentFuel < 1f;//Yakıt bitmiş kontrolü
 
+        public float CurrentFuel => _currentFuel / _maxFuel;//Değer 0-1 arasında olduğu için maxFuel zaten 100 ya 100f yazmak yerine daha dinamik maxFuel dedim
+
+
 
         private void Awake()
         {
